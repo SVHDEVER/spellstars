@@ -10,7 +10,6 @@ const firebaseConfig = {
   storageBucket: "spellstars-1852f.firebasestorage.app",
   messagingSenderId: "399813421674",
   appId: "1:399813421674:web:40a66401d6ec6b424c7813"
-"
 };
 
 // Initialize Firebase
