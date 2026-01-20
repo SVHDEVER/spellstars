@@ -745,7 +745,9 @@ export default function SpellStarsApp() {
   }
 
   if (mode === 'register') {
-    const availableSchools = Object.values(schools).map(s => s.name);
+    const availableSchools = Object.values(schools).length > 0 
+  ? Object.values(schools).map(s => s.name)
+  : ["St. Bernadette's"];
     const availableClasses = selectedSchool
       ? schools[selectedSchool.toLowerCase().replace(/\s/g, '-')]?.classes || []
       : [];
