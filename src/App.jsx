@@ -745,12 +745,13 @@ export default function SpellStarsApp() {
   }
 
   if (mode === 'register') {
-    const availableSchools = Object.values(schools).length > 0 
-  ? Object.values(schools).map(s => s.name)
-  : ["St. Bernadette's"];
-    const availableClasses = selectedSchool
-      ? schools[selectedSchool.toLowerCase().replace(/\s/g, '-')]?.classes || []
-      : [];
+    const availableSchools = Object.keys(schools).length > 0 
+      ? Object.values(schools).map(s => s.name)
+      : ["St. Bernadette's"];
+    
+    const availableClasses = selectedSchool && schools[selectedSchool.toLowerCase().replace(/\s/g, '-')]
+      ? schools[selectedSchool.toLowerCase().replace(/\s/g, '-')].classes || []
+      : selectedSchool === "St. Bernadette's" ? ["Year 3"] : [];
 
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8 flex items-center justify-center">
